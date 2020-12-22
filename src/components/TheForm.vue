@@ -95,7 +95,8 @@
       </div>
     </div>
     <div class="form-control">
-      <RatingControl></RatingControl>
+      <!-- v-model="rating" the same that :model-value="" (props) and @update:modelValue="" (custom event) -->
+      <RatingControl v-model="rating"></RatingControl>
     </div>
     <div class="form-control">
       <input
@@ -128,17 +129,19 @@ export default {
       interest: [],
       how: null,
       confirm: false,
-      userNameValidity: 'pending'
+      userNameValidity: 'pending',
+      rating: null
     };
   },
   methods: {
     submitForm() {
-      console.log('User name: ' + this.userName);
-      console.log('User age: ' + this.userAge);
-      console.log('How: ' + this.how);
-      console.log('Interest: ' + this.interest);
-      console.log('referrer: ' + this.referrer);
-      console.log('confirm: ' + this.confirm);
+      //   console.log('User name: ' + this.userName);
+      //   console.log('User age: ' + this.userAge);
+      //   console.log('How: ' + this.how);
+      //   console.log('Interest: ' + this.interest);
+      //   console.log('referrer: ' + this.referrer);
+      //   console.log('confirm: ' + this.confirm);
+      console.log(this.rating);
 
       this.userName = '';
       this.userAge = null;
@@ -146,6 +149,7 @@ export default {
       this.interest = [];
       this.how = null;
       this.confirm = false;
+      this.rating = null;
     },
     validateInput() {
       if (this.userName.trim() === '') {
