@@ -95,6 +95,9 @@
       </div>
     </div>
     <div class="form-control">
+      <RatingControl></RatingControl>
+    </div>
+    <div class="form-control">
       <input
         type="checkbox"
         id="confirm-terms"
@@ -110,7 +113,12 @@
 </template>
 
 <script>
+import RatingControl from './RatingControl';
+
 export default {
+  components: {
+    RatingControl
+  },
   data() {
     return {
       userName: '',
